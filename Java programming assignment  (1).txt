@@ -1,0 +1,85 @@
+﻿public class ExamProgram {
+    public static void main(String[] args) {
+        
+// Variable declaration.
+
+
+        int ass1, ass2, ass3, cat1, cat2, finalExam;
+        int coursework, totalScore;
+
+
+        boolean repeat = false;
+
+
+        do {
+            System.out.println("Menu:");
+            System.out.println("1. View coursework results");
+            System.out.println("2. View exam results");
+            System.out.println("3. Exit the program");
+          
+           
+            switch  {
+                case 1:
+                    System.out.print("Enter assessment 1 score: ");
+                   
+                    System.out.print("Enter assessment 2 score: ");
+                   
+                    System.out.print("Enter assessment 3 score: ");
+                   
+                    System.out.print("Enter CAT 1 score: ");
+                   
+                    System.out.print("Enter CAT 2 score: ");
+                  
+  Coursework = ass1 + ass2 + ass3 + cat1 + cat2;
+
+
+                    System.out.println("Coursework results: " + coursework);
+                    break;
+
+
+                case 2:
+                    System.out.print("Enter final exam score: ");
+                    
+ TotalScore = finalExam + coursework;
+
+
+                    System.out.println("Exam results: " + finalExam);
+                    System.out.println("Total score: " + totalScore);
+                    break;
+
+
+                case 3:
+                    System.out.println("Exiting the program.");
+                    return;
+
+
+                default:
+                    System.out.println("Invalid option. Please try again.");
+            }
+
+
+            // Counting function to compute the number of coursework assessments done
+            int count = 0;
+            for (int i = 0; i < 5; i++) {
+                if (i == 0 && ass1 > 0) count++;
+                if (i == 1 && ass2 > 0) count++;
+                if (i == 2 && ass3 > 0) count++;
+                if (i == 3 && cat1 > 0) count++;
+                if (i == 4 && cat2 > 0) count++;
+            }
+
+
+            // Decision function to determine if the student has done 2/3 of coursework
+            if (count < (2.0 / 3.0) * 5) {
+                repeat = true;
+                System.out.println("You need to repeat the coursework.");
+            } else {
+                repeat = false;
+            }
+
+
+        } while (true);
+
+
+    }
+}
